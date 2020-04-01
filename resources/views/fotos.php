@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Esta es la pagina de fotos <?= $numero ?></h1>
+    <h1>Esta es la pagina de fotos <?= $numero ?> </h1>
 </body>
 </html>
