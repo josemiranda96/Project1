@@ -17,12 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('fotos/{numero?}',function($numero = 'Sin Numero'){
-    return 'Estas en la galeria de fotos: '.$numero;    
-})->where('numero','[0-9]+');
+Route::get('fotos', function(){
+return view('fotos');
+})->name('foto');
 
-Route::view('galeria','fotos',['numero' =>125]);
+Route::get('blog', function(){
+    return view('blog');
+})->name('noticias');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('nosotros/{nombre?}',function($nombre = null){
+    $equipo = ['Jose', 'Luis'];
+    return view('nosotros', compact('equipo','nombres'));
+    //return view('nosotros',['equipo'=>$equipo]);
+})->name('nosotros');
